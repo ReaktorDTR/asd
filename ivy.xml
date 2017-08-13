@@ -1,0 +1,25 @@
+<ivy-module version="2.0">
+	<info organisation="org.springframework.boot" module="spring-boot-sample-ant"/>
+	<configurations>
+		<conf name="compile" description="everything needed to compile this module"/>
+		<conf name="runtime" extends="compile" description="everything needed to run this module"/>
+		<conf name="loader" description="Spring Boot loader used when manually building an executable archive"/>
+	</configurations>
+	<dependencies>
+		<dependency org="org.springframework.boot" name="spring-boot-starter" rev="${spring-boot.version}" conf="compile"/>
+		<dependency org="org.springframework.boot" name="spring-boot-loader" rev="${spring-boot.version}" conf="loader->default"/>
+		<dependency org="org.springframework.boot" name="spring-boot-autoconfigure" rev="${spring-boot.version}" conf="compile->default"/>
+		<dependency org="org.springframework.boot" name="spring-boot-starter-jdbc" rev="${spring-boot.version}" conf="compile->default"/>
+		<dependency org="org.springframework.boot" name="spring-boot-starter-mail" rev="${spring-boot.version}" conf="compile->default"/>
+		<dependency org="org.projectlombok" name="lombok" rev="${lombok.version}" conf="compile->default"/>
+		<dependency org="org.apache.shiro" name="shiro-core" rev="${shiro.version}" conf="compile->default"/>
+		<dependency org="org.apache.shiro" name="shiro-spring-boot-web-starter" rev="${shiro.version}" conf="compile->default"/>
+		<dependency org="org.postgresql" name="postgresql" rev="${postgresql.version}" conf="compile->default"/>
+		<dependency org="org.mybatis" name="mybatis" rev="${mybatis.version}" conf="compile->default"/>
+		<dependency org="org.mybatis.spring.boot" name="mybatis-spring-boot-starter" rev="${mybatis-spring.version}"
+		            conf="compile->default"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="${jackson.version}" conf="compile->default"/>
+		<dependency org="javax.servlet" name="javax.servlet-api" rev="${javax.version}" conf="compile->default"/>
+		<dependency org="org.apache.poi" name="poi-ooxml" rev="${poi.version}" conf="compile->default"/>
+	</dependencies>
+</ivy-module>
